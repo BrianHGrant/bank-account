@@ -20,24 +20,28 @@
 
   <body>
     <div class="container">
-      <header>
-        <h1>Epicodus Credit Union</h1>
-      </header>
       <div class="row">
-        <div class="col-md-6 well">
+        <div class="col-md-6 col-md-offset-3">
+          <header>
+            <h1>Epicodus Credit Union</h1>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 well" id="register">
           <h2>Register New Account</h2>
           <form id="new-account">
-            <div class="form-group">
+            <div class="form-group" id="name-register">
               <label for="userName">Enter Your Name:</label>
-              <input type="text" id="user-name">
+              <input type="text" id="user-name"><span id="help-block-name" class="help-block">Enter valid name!</span>
             </div>
           <div class="form-group">
             <label for="">First Deposit:  </label>
-            <input type="number" id="first-deposit">
+            <input type="number" id="first-deposit"><span id="help-block-deposit" class="help-block">Enter deposit amount!</span>
           </div>
           <button type="submit" class="btn btn-lg btn-warning" id="user-register">Register</button>
         </div>
-        <div class="col-md-6 well">
+        <div class="col-md-6 col-md-offset-3 well" id="transaction">
           <h2>Deposit or withdrawal funds</h2>
           <div class="form-group">
             <label for="">Deposit Amount:    </label>
@@ -47,18 +51,18 @@
             <label for="">Withdrawal Amount: </label>
             <input type="number" id="withdrawal" min="0" value="0">
           </div>
-          <button type="button" class="btn btn-lg btn-info" id="deposit-withdrawal">Go</button>
+          <button type="button" class="btn btn-lg btn-info" id="deposit-withdrawal">Enter</button>
         </div>
 
         </div>
 
-        </div>
+
 
         </form>
         <div id="output">
         <div class="row">
           <div class="col-md-6 col-md-offset-3 well">
-
+              <h2>Hello, <span id="welcome"></span>!</h2>
               <h1>Current Balance: $<span id="account-balance"></span></h1>
             </div>
           </div>

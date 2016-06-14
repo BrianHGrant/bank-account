@@ -1,3 +1,17 @@
-#output {
+#output, #transaction,  #help-block-name, #help-block-deposit{
   display: none;
+}
+
+.help-block {
+  color: red;
+}
+
+footer {
+   background-color: #F3F3F3;
+   padding-top: 10px;
+   padding-bottom: 0px;
+   padding-left: 20px;
+   position:fixed;
+   bottom:0;
+   width:100%;
 }

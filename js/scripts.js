@@ -20,11 +20,17 @@ $(document).ready(function(){
     var accountName = $("#user-name").val();
     var initialDeposit = parseInt($("#first-deposit").val());
     if (!accountName) {
-       alert("Please enter a name.");
+       $("#help-block-name").show();
     } else if (!initialDeposit) {
-      alert("Please enter a deposit.");
+       $("#help-block-deposit").show();
     } else {
       newUserAccount = new Account(accountName, initialDeposit);
+      $("#user-register").remove();
+      $("#register").hide();
+      $("#transaction").show();
+      $("#output").show();
+      $("#account-balance").text(newUserAccount.balance);
+      $("#welcome").text(newUserAccount.name);
     }
 
     $("#deposit-withdrawal").click(function(){
@@ -32,21 +38,17 @@ $(document).ready(function(){
       var accountWithdrawal = parseInt($("#withdrawal").val());
       if (!accountDeposit) {
          accountDeposit = 0;
-      } else if (!accountWithdrawal) {
+      }
+      if (!accountWithdrawal) {
         accountWithdrawal = 0;
       }
       newUserAccount.add(accountDeposit);
       newUserAccount.subtract(accountWithdrawal);
       $("#account-balance").text(newUserAccount.balance);
-      console.log(newUserAccount.balance)
       $("#withdrawal").val(0);
       $("#deposit").val(0);
     });
-      $("#output").show();
-      $("#account-balance").text(newUserAccount.balance);
 
-    console.log(newUserAccount);
-    // $('#output').text(output);
     $("#new-account")[0].reset();
   });
 });
